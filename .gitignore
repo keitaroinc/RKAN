@@ -1,0 +1,5 @@
+#NetBeans project files
+nbproject/
+
+#Node.js modules
+node_modules/
