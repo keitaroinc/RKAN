@@ -1,0 +1,142 @@
+// Global Variables
+@bootstrap-path: '../../node_modules/bootstrap/less/';
+@navbar-default-width: 300px;
+
+/*!
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// Core variables and mixins
+@import "_bootstrap-variables.less";
+@import "@{bootstrap-path}mixins.less";
+
+// Reset and dependencies
+@import "@{bootstrap-path}normalize.less";
+@import "@{bootstrap-path}print.less";
+@import "@{bootstrap-path}glyphicons.less";
+
+// Core CSS
+@import "@{bootstrap-path}scaffolding.less";
+@import "@{bootstrap-path}type.less";
+@import "@{bootstrap-path}code.less";
+@import "@{bootstrap-path}grid.less";
+@import "@{bootstrap-path}tables.less";
+@import "@{bootstrap-path}forms.less";
+@import "@{bootstrap-path}buttons.less";
+
+// Components
+@import "@{bootstrap-path}component-animations.less";
+@import "@{bootstrap-path}dropdowns.less";
+@import "@{bootstrap-path}button-groups.less";
+@import "@{bootstrap-path}input-groups.less";
+@import "@{bootstrap-path}navs.less";
+@import "@{bootstrap-path}navbar.less";
+@import "@{bootstrap-path}breadcrumbs.less";
+@import "@{bootstrap-path}pagination.less";
+@import "@{bootstrap-path}pager.less";
+@import "@{bootstrap-path}labels.less";
+@import "@{bootstrap-path}badges.less";
+@import "@{bootstrap-path}jumbotron.less";
+@import "@{bootstrap-path}thumbnails.less";
+@import "@{bootstrap-path}alerts.less";
+@import "@{bootstrap-path}progress-bars.less";
+@import "@{bootstrap-path}media.less";
+@import "@{bootstrap-path}list-group.less";
+@import "@{bootstrap-path}panels.less";
+@import "@{bootstrap-path}responsive-embed.less";
+@import "@{bootstrap-path}wells.less";
+@import "@{bootstrap-path}close.less";
+
+// Components w/ JavaScript
+@import "@{bootstrap-path}modals.less";
+@import "@{bootstrap-path}tooltip.less";
+@import "@{bootstrap-path}popovers.less";
+@import "@{bootstrap-path}carousel.less";
+
+// Utility classes
+@import "@{bootstrap-path}utilities.less";
+@import "@{bootstrap-path}responsive-utilities.less";
+
+.container-fluid{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.default-background{
+  background: @brand-primary url("../img/ckan-bg.jpg") 100% center no-repeat;
+  background-size: cover;
+}
+
+.navbar-fixed-left{
+  left: 0;
+  top: 0;
+  bottom: auto;
+  right: auto;
+  width: @navbar-default-width;
+  min-height: 100vh;
+}
+
+.navbar-ckan{
+  display: flex;
+  flex-wrap: column;
+  flex-flow: column;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 0;
+  padding: @grid-gutter-width 0;
+  border-radius: 0;
+  border: none;
+  background-color: @brand-primary;
+  border-right: 1px solid lighten(@brand-primary, 5%);
+  box-shadow: 20px 0 20px rgba(0,0,0,0.1);
+
+  & > p{
+    color: red;
+  }
+
+}
+
+.navbar-header{
+  flex-grow: 1;
+  padding: @grid-gutter-width/2 @grid-gutter-width;
+}
+
+.list-primary-nav{
+  .text-center;
+  flex-grow: 2;
+  .list-unstyled;
+  display: block;
+
+  li{
+
+    a{
+      padding: @grid-gutter-width/2;
+      display: block;
+      color: lighten(@brand-primary, 30%);
+      background: fade(@body-bg, 8%);
+      margin: 3px 0;
+    }
+
+  }
+
+}
+
+.list-secondary-nav{
+  .list-unstyled;
+  padding: @grid-gutter-width @grid-gutter-width;
+  font-size: @font-size-small;
+
+  a{
+    color: @body-bg;
+    display: block;
+    padding: @grid-gutter-width/4;
+  }
+}
+
+.navbar-brand{
+  float: none;
+  color: @body-bg;
+  font-size: @font-size-h1;
+}
