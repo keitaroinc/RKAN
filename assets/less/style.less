@@ -1,6 +1,10 @@
+// Import Open Sans from Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i');
+
 // Global Variables
+@white: #fff;
 @bootstrap-path: '../../node_modules/bootstrap/less/';
-@navbar-default-width: 300px;
+@navbar-default-width: 200px;
 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -59,9 +63,20 @@
 @import "@{bootstrap-path}utilities.less";
 @import "@{bootstrap-path}responsive-utilities.less";
 
+// RKAN specific styles
+@import "_mixins.less";
+@import "_header.less";
+@import "_content.less";
+@import "_search.less";
+@import "_footer.less";
+
+
+
 .container-fluid{
   padding-left: 0;
   padding-right: 0;
+  display: flex;
+  flex-flow: row;
 }
 
 .default-background{
@@ -69,52 +84,70 @@
   background-size: cover;
 }
 
+.white-links{
+  a{
+    color: @white;
+  }
+}
+
 .navbar-fixed-left{
-  left: 0;
-  top: 0;
-  bottom: auto;
-  right: auto;
+  .flex-column;
   width: @navbar-default-width;
   min-height: 100vh;
-}
-
-.navbar-ckan{
-  display: flex;
-  flex-wrap: column;
-  flex-flow: column;
-  align-content: center;
-  justify-content: center;
-  margin-bottom: 0;
-  padding: @grid-gutter-width 0;
-  border-radius: 0;
-  border: none;
   background-color: @brand-primary;
-  border-right: 1px solid lighten(@brand-primary, 5%);
+  border-right: 1px solid lighten(@brand-primary, 8%);
   box-shadow: 20px 0 20px rgba(0,0,0,0.1);
-
-  & > p{
-    color: red;
-  }
-
 }
 
-.navbar-header{
+.navbar-title{
   flex-grow: 1;
-  padding: @grid-gutter-width/2 @grid-gutter-width;
+  /*word-wrap: break-word;*/
+  padding: @grid-gutter-width;
+  margin: 0;
+  text-align: center;
+  .white-links;
+
+  sup{
+    font-size: 50%;
+  }
+}
+
+.navbar-brand{
+  float: none;
+  font-size: @font-size-h1;
+  padding: 0;
 }
 
 .list-primary-nav{
-  .text-center;
+  .white-links;
   flex-grow: 2;
   .list-unstyled;
   display: block;
 
   li{
 
+    &.active{
+
+      a{
+        position: relative;
+
+        &:before{
+          content: '';
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 5px;
+          background-color: @body-bg;
+        }
+      }
+    }
+
     a{
-      padding: @grid-gutter-width/2;
+      color: lighten(@brand-primary, 40%);
+      padding: @grid-gutter-width/2 @grid-gutter-width;
       display: block;
-      color: lighten(@brand-primary, 30%);
       background: fade(@body-bg, 8%);
       margin: 3px 0;
     }
@@ -124,19 +157,18 @@
 }
 
 .list-secondary-nav{
+  .white-links;
   .list-unstyled;
   padding: @grid-gutter-width @grid-gutter-width;
   font-size: @font-size-small;
 
   a{
-    color: @body-bg;
     display: block;
-    padding: @grid-gutter-width/4;
+    padding: @grid-gutter-width/4 0;
   }
+
 }
 
-.navbar-brand{
-  float: none;
-  color: @body-bg;
-  font-size: @font-size-h1;
+.module-title{
+  font-weight: 400;
 }
