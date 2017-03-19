@@ -7,7 +7,6 @@ import {
 	UNAUTH_USER,
 } from './types'
 
-// const ROOT_URL = 'https://advertisementsserver.herokuapp.com'
 const ROOT_URL ='http://192.168.0.141:5000'
 
 export function signupUser(values) {
@@ -31,23 +30,31 @@ export function signupUser(values) {
   }
 }
 
-export function signinUser() {
+export function signinUser({login, password}) {
 	return dispatch => {
-		axios.get(`${ROOT_URL}/api/3/action/user_show?id=tino097`, {headers: {'Authorization':'2d157972-2d68-49b6-accd-b1b5e3f48046'}})
+		axios.post(`${ROOT_URL}/user/login`, {login, password})
 			.then(response => {
-				dispatch({
-					type: AUTH_USER,
-					payload: response.data.result
-				})
-				localStorage.setItem('auth_token', response.data.apikey)				
-				localStorage.setItem('user', JSON.stringify(response.data.result))				
-				browserHistory.push('/')
-
+				axios.get(`${ROOT_URL}/api/3/action/user_show?id=${login}`)
+					.then(response => {
+						dispatch({
+							type: AUTH_USER,
+							payload: response.data.result
+						})
+						localStorage.setItem('auth_token', response.data.apikey)				
+						localStorage.setItem('user', JSON.stringify(response.data.result))				
+						browserHistory.push('/')
+					})
+					.catch(error => {
+						dispatch({
+							type: AUTH_ERROR,
+							payload: {errors: ['Something went wrong!!!']}
+						})
+					})
 			})
 			.catch(error => {
 				dispatch({
 					type: AUTH_ERROR,
-					payload: {errors: ['Погрешен Е-маил/Лозинка']}
+					payload: {errors: ['Invalid Username/Password!!!']}
 				})
 			})
 	}
