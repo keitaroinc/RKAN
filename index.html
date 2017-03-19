@@ -8,25 +8,15 @@
   <body>
     <div class="app"></div>
     <div class="container-fluid default-background">
-      <div class="navbar-ckan navbar-fixed-left">
+      <div class="navbar-fixed-left">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">rkan<sup>&trade;</sup></a>
-        </div>
+        <h1 class='navbar-title'><a class="navbar-brand" href="#">rkan<sup>&trade;</sup></a></h1>
 
         <ul class="list-primary-nav">
           <li><a href="#">Action</a></li>
           <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li role="separator" class="divider"></li>
+          <li class="active"><a href="#">Something else here</a></li>
           <li><a href="#">Separated link</a></li>
-          <li role="separator" class="divider"></li>
           <li><a href="#">One more separated link</a></li>
         </ul>
 
@@ -39,6 +29,35 @@
           <li role="separator" class="divider"></li>
           <li><a href="#">One more separated link</a></li>
         </ul>
+      </div>
+      <div class="main-content">
+        <div class="user-actions">
+          <ul class="list-inline list-user-actions">
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span><span class="glyphicon-label">Log in</span></a></li>
+            <li class="pull-right"><a href="#"><span class="glyphicon glyphicon-user"></span><span class="glyphicon-label">Register</span></a></li>
+          </ul>
+        </div>
+        <div class="search-form-container">
+          <form>
+            <div class="pull-left">
+              <h2 class="search-title">Search data:</h2>
+            </div>
+            <div class="input-group giant-search">
+              <input class="form-control" type="text" placeholder="E.g. Environment">
+              <div class="input-group-btn">
+                <button type="submit" class="btn btn-search"><span class="glyphicon glyphicon-search"></span></button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="popular-tags">
+          <h4 class="module-title text-uppercase">Popular Tags</h4>
+          <ul class="list-inline list-popular-tags">
+            <li><a href="#" class="label label-default">keitaro</a></li>
+            <li><a href="#" class="label label-default">zbrkan</a></li>
+            <li><a href="#" class="label label-default">other</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </body>
