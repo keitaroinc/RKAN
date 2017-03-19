@@ -33,6 +33,12 @@ class Header extends Component {
 		        		<li className="nav-item">
 			    			<Link to="signin" className={"nav-link " + signinActive}>Hello, {this.props.user.name}</Link>
 				    	</li>
+						<li className="nav-item">
+				    		<em className='gray'/>
+					    </li>
+					    <li className="nav-item">
+				    		<Link to="signout" className="nav-link">Sign out</Link>
+					    </li>	
 		        	</ul>
 				)
 			}
