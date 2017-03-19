@@ -1,0 +1,44 @@
+.main-content{
+  color: @white;
+  .flex-column;
+  margin: auto;
+}
+
+.popular-tags{
+  margin: @grid-gutter-width 0;
+}
+
+.list-popular-tags{
+  font-size: 150%;
+
+  .label-default{
+    font-weight: 400;
+    border-radius: @grid-gutter-width;
+    color: @brand-primary;
+    background-color: lighten(@brand-primary, 30%);
+
+    &:hover{
+      color: @brand-primary;
+      background-color: lighten(@brand-primary, 50%);
+    }
+  }
+}
+
+.user-actions{
+  flex-grow: 2;
+  min-height: 20vh;
+  font-size: 150%;
+
+  a{
+    color: @white;
+  }
+
+  .glyphicon-label{
+    font-size: initial;
+  }
+
+}
+
+.list-user-actions{
+
+}
