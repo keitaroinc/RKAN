@@ -3,3 +3,5 @@ nbproject/
 
 #Node.js modules
 node_modules/
+bundle.js
+npm-debug.log
