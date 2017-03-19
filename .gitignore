@@ -3,3 +3,6 @@ nbproject/
 
 #Node.js modules
 node_modules/
+
+#Ignore preprocessed CSS files
+assets/css/
