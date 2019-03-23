@@ -2,7 +2,7 @@ FROM node:alpine as build
 
 WORKDIR /usr/src/app
 COPY . .
-COPY env.production .env.local
+COPY production.env .env.local
 RUN npm install --silent
 RUN npm run build
 
