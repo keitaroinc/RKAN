@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
-import History from './helper/history';
+import HistoryApi from './helper/historyApi';
 import reduxStore from './reduxStore';
 import { Provider } from 'react-redux';
 
@@ -8,7 +8,7 @@ import IndexPage from './pages/indexPage';
 
 export default class Root extends Component {
 
-    history = History.getInstance();
+    history = HistoryApi.getInstance();
 
     render() {
         const store = reduxStore();

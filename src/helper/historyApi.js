@@ -1,7 +1,7 @@
-import createBrowserHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 import ReduxUtil from './reduxUtil';
 
-export default class History {
+export default class HistoryApi {
     
     api = createBrowserHistory({
         basename: '',
@@ -23,9 +23,9 @@ export default class History {
 }
 
 var instance = null;
-History.getInstance = function() {
+HistoryApi.getInstance = function() {
     if (instance === null) {
-        instance = new History();
+        instance = new HistoryApi();
     }
     return instance;
 }
