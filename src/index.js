@@ -1,3 +1,11 @@
+/*
+Copyright (c) 2017 Keitaro AB
+
+Use of this source code is governed by an MIT license
+that can be found in the LICENSE file or at
+https://opensource.org/licenses/MIT.
+*/
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import thunk from 'redux-thunk';
@@ -30,3 +38,4 @@ ReactDOM.render(
     <Router history={browserHistory} routes={routes} />
   </Provider>
   , document.querySelector('.app'));
+

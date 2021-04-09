@@ -1,3 +1,11 @@
+/*
+Copyright (c) 2017 Keitaro AB
+
+Use of this source code is governed by an MIT license
+that can be found in the LICENSE file or at
+https://opensource.org/licenses/MIT.
+*/
+
 import { 
 	AUTH_USER,
 	AUTH_ERROR,
@@ -25,3 +33,4 @@ export default function( state=INITIAL_STATE, action ) {
 	}
 	return state
 }
+

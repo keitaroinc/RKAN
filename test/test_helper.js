@@ -1,3 +1,11 @@
+/*
+Copyright (c) 2017 Keitaro AB
+
+Use of this source code is governed by an MIT license
+that can be found in the LICENSE file or at
+https://opensource.org/licenses/MIT.
+*/
+
 import _$ from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -34,3 +42,4 @@ $.fn.simulate = function(eventName, value) {
 };
 
 export {renderComponent, expect};
+
